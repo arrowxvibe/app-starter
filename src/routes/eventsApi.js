@@ -7,7 +7,16 @@ const Event = require('../models/events');
 router.get('/', async (req, res) => {
   try {
     const events = await Event.find();
-    res.json(events.map(x => ({id: x._id, title: x.title, start : x?.start?.getTime(), end : x?.end?.getTime(), className: x.className })));
+    res.json(
+      events.map((x) => ({
+        id: x._id,
+        title: x.title,
+        start: x?.start?.getTime(),
+        end: x?.end?.getTime(),
+        className: x.className,
+        username: x.username,
+      }))
+    );
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -67,9 +76,18 @@ router.get('/upcoming/all', async (req, res) => {
       return {
         id: event._id.toString(), // Convert ObjectId to string
         title: event.title,
-        start: event.start instanceof Date ? event.start.getTime() : new Date(event.start.$date).getTime(),
-        end: event.end instanceof Date ? event.end.getTime() : (event.end ? new Date(event.end.$date).getTime() : null),
+        start:
+          event.start instanceof Date
+            ? event.start.getTime()
+            : new Date(event.start.$date).getTime(),
+        end:
+          event.end instanceof Date
+            ? event.end.getTime()
+            : event.end
+            ? new Date(event.end.$date).getTime()
+            : null,
         className: event.className,
+        username: event.username,
       };
     });
     res.json(formattedEvents);
