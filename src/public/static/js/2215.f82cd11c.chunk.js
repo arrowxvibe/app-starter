@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkubold_react=self.webpackChunkubold_react||[]).push([[2215],{72215:function(e,t,a){a.r(t);a(72791);var r=a(75184),s=a(80184);t.default=function(){return(0,s.jsx)(s.Fragment,{children:(0,s.jsx)(r.Z,{breadCrumbItems:[{label:"Extra Pages",path:"/pages/starter"},{label:"Starter",path:"/pages/starter",active:!0}],title:"Starter"})})}}}]);
+//# sourceMappingURL=2215.f82cd11c.chunk.js.map

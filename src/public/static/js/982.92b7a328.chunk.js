@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkubold_react=self.webpackChunkubold_react||[]).push([[982],{30982:function(e,t,r){r.r(t);var a=r(72791),u=r(80184);t.default=function(){(new Date).getFullYear();return(0,u.jsx)(a.Fragment,{children:(0,u.jsx)("footer",{className:"footer"})})}}}]);
+//# sourceMappingURL=982.92b7a328.chunk.js.map
