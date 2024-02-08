@@ -29,13 +29,8 @@ const userApi = require('./routes/userApi');
 
 dotenv.config(); // Load environment variables from .env file
 
-// const app = express();
-// app.use(
-//   cors({
-//     origin: "http://localhost:8080", // Your front-end domain
-//     credentials: true, // Allow cookies (if needed)
-//   })
-// );
+const app = express();
+
 // Connect to MongoDB
 mongoose
   .connect(process.env.MONGODB_URI, {
