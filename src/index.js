@@ -46,9 +46,7 @@ app.use(express.json());
 // Serve static assets from the "public" directory
 app.use(express.static(path.join(__dirname, "public")));
 // Serve the React UI at the root path
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "src/public/index.html"));
-});
+
 
 // Mount routes
 app.use('/api/', loginRoutes);
@@ -68,6 +66,10 @@ app.use('/api/user', userApi);
 // app.use('/product/list', getProductsRoute);
 // app.use('/product/delete', deleteProductRoute);
 // app.use('/product/update', updateProductRoute);
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
+});
 
 // Start server
 const port = process.env.PORT || 8080;
