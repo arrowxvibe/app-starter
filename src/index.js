@@ -7,7 +7,7 @@ const cors = require('cors');
 
 
 const loginRoutes = require('./routes/login'); // Assuming auth routes are in a separate file
-const registerRoutes = require('./routes/register'); // Assuming auth routes are in a separate file
+// const registerRoutes = require('./routes/register'); // Assuming auth routes are in a separate file
 const eventsApi = require('./routes/eventsApi');
 const contactApi = require('./routes/contactApi');
 const customerApi = require('./routes/customerApi');
@@ -19,23 +19,23 @@ const userApi = require('./routes/userApi');
 
 
 
-const protectedRoutes = require("./routes/protected");
-const serviceApiRoutes = require("./routes/service/serviceApi");
-const createProductRoute = require("./routes/product/createProduct");
-const getProductRoute = require("./routes/product/getProduct");
-const getProductsRoute = require("./routes/product/getProducts");
-const deleteProductRoute = require("./routes/product/deleteProduct");
-const updateProductRoute = require("./routes/product/updateProduct");
+// const protectedRoutes = require("./routes/protected");
+// const serviceApiRoutes = require("./routes/service/serviceApi");
+// const createProductRoute = require("./routes/product/createProduct");
+// const getProductRoute = require("./routes/product/getProduct");
+// const getProductsRoute = require("./routes/product/getProducts");
+// const deleteProductRoute = require("./routes/product/deleteProduct");
+// const updateProductRoute = require("./routes/product/updateProduct");
 
 dotenv.config(); // Load environment variables from .env file
 
-const app = express();
-app.use(
-  cors({
-    origin: "http://localhost:8080", // Your front-end domain
-    credentials: true, // Allow cookies (if needed)
-  })
-);
+// const app = express();
+// app.use(
+//   cors({
+//     origin: "http://localhost:8080", // Your front-end domain
+//     credentials: true, // Allow cookies (if needed)
+//   })
+// );
 // Connect to MongoDB
 mongoose
   .connect(process.env.MONGODB_URI, {
